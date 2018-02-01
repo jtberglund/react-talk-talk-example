@@ -12,10 +12,23 @@ const config = {
     },
     module: {
         rules: [
-            { test: /\.css$/, loader: 'style-loader!css-loader?-url' },
-            { test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'resolve-url-loader', 'sass-loader?sourceMap'] },
-            { test: /\.(ts|tsx)$/, exclude: /node_modules/, loader: 'awesome-typescript-loader' },
-            { test: /\.(eot|ttf|svg|woff|woff2)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'file-loader?name=[name].[ext]' }
+            {
+                test: /\.css$/,
+                loader: 'style-loader!css-loader?-url'
+            },
+            {
+                test: /\.scss$/,
+                loaders: ['style-loader', 'css-loader', 'resolve-url-loader', 'sass-loader?sourceMap']
+            },
+            {
+                test: /\.(ts|tsx)$/,
+                exclude: /node_modules/,
+                loader: 'awesome-typescript-loader'
+            },
+            {
+                test: /\.(eot|ttf|svg|woff|woff2)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+                loader: 'file-loader?name=[name].[ext]'
+            }
         ]
     },
     plugins: [

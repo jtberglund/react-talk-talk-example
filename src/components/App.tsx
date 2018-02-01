@@ -1,4 +1,5 @@
 import * as React from 'react';
+import Header from './Header';
 
 interface Props {
     //
@@ -14,6 +15,10 @@ export default class App extends React.Component<Props, State> {
     }
 
     public render() {
-        return <div className="app">App!</div>;
+        return (
+            <div className="app">
+                <Header user="test-user" />
+            </div>
+        );
     }
 }

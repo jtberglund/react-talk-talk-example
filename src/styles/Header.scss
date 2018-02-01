@@ -1,0 +1,26 @@
+$height: 5.2rem;
+
+.header {
+    border-bottom: 0.1rem solid #d1d1d1;
+    display: block;
+    height: $height;
+    left: 0;
+    max-width: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+
+    .header__title {
+        font-size: 2rem;
+        line-height: $height;
+        margin: 0;
+        display: inline-block;
+    }
+
+    .header__user {
+        font-size: 1.4rem;
+        line-height: $height;
+    }
+}
