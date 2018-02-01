@@ -1,5 +1,7 @@
 import * as React from 'react';
 import Header from './Header';
+import Login from './Login';
+import '../styles/App.scss';
 
 interface Props {
     //
@@ -18,6 +20,10 @@ export default class App extends React.Component<Props, State> {
         return (
             <div className="app">
                 <Header user="test-user" />
+
+                <div className="app__content container">
+                    <Login />
+                </div>
             </div>
         );
     }
