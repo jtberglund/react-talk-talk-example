@@ -7,14 +7,12 @@ interface Props {
     body: string;
 }
 
-const Memo: React.SFC<Props> = ({ title, body }) => {
-    return (
-        <div className="memo">
-            <span className="memo__title">{title}</span>
-            <p className="memo__body">{body}</p>
-        </div>
-    );
-};
+const Memo: React.SFC<Props> = ({ title, body }) => (
+    <div className="memo">
+        <span className="memo__title">{title}</span>
+        <p className="memo__body">{body}</p>
+    </div>
+);
 
 Memo.defaultProps = {};
 Memo.displayName = 'Memo';

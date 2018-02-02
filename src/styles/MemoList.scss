@@ -1,0 +1,12 @@
+.memo-list {
+    .memo-list__memos {
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .memo-list__empty-text {
+        font-size: 4rem;
+        text-align: center;
+    }
+}

@@ -5,7 +5,7 @@ import { combineReducers } from 'redux';
 
 export interface AppState {
     user: UserState;
-    memos: MemoState;
+    memo: MemoState;
 }
 
-export default combineReducers<AppState>({ user: userReducer, memos: memoReducer });
+export default combineReducers<AppState>({ user: userReducer, memo: memoReducer });

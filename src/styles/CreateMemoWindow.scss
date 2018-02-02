@@ -1,0 +1,25 @@
+.memo-form {
+    position: fixed;
+    margin-top: 5.2rem;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #dddddd77;
+    z-index: 8;
+
+    .memo-form__content {
+        display: inline-block;
+        background-color: #fff;
+        padding: 4rem;
+        border-radius: 2px;
+        min-width: 60rem;
+    }
+
+    textarea {
+        resize: none;
+    }
+}

@@ -1,4 +1,15 @@
 .memo {
     border: 1px solid #e1e1e1;
     border-radius: 2px;
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 1px 1px 3px;
+    transition: all 200ms ease-in;
+
+    &:hover {
+        transform: scale(1.02);
+    }
+
+    .memo__title {
+        font-size: 2rem;
+    }
 }
