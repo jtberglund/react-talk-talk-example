@@ -29,7 +29,7 @@ class MemoList extends React.Component<AllProps, State> {
 
         return (
             <div className="memo-list">
-                <div className="memo-list__memos">{memoList.map(memo => <Memo {...memo} />)}</div>
+                <div className="memo-list__memos">{memoList.map((memo, i) => <Memo key={i} {...memo} />)}</div>
                 {isEmpty && (
                     <>
                         <p className="memo-list__empty-text">You don't have any memos yet</p>

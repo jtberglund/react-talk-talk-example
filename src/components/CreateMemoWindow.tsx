@@ -77,9 +77,10 @@ class CreateMemoWindow extends React.Component<AllProps, State> {
     private handleSubmit(e: any) {
         e.preventDefault();
 
-        // Add memo and close window
         this.props.addMemo(this.state.title, this.state.body);
         this.close();
+        // Clear inputs
+        this.setState({ title: '', body: '' });
     }
 
     private close() {

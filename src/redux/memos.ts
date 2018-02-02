@@ -49,7 +49,7 @@ const defaultState: MemoState = {
 export default (state: MemoState = defaultState, { type, payload }) => {
     switch (type) {
         case ADD_MEMO:
-            const id = Object.keys(state).length + 1;
+            const id = Object.keys(state.memos).length + 1;
             return {
                 ...state,
                 memos: {

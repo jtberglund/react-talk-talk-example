@@ -4,7 +4,8 @@
     "description": "Example project",
     "scripts": {
         "start": "gulp dev",
-        "build": "gulp prod"
+        "build": "gulp prod",
+        "setup": "npm i -g gulp && npm install"
     },
     "author": "Jeremy Berglund",
     "license": "MIT",

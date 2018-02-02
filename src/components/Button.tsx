@@ -8,7 +8,7 @@ interface Props {
 
 const Button: React.SFC<Props> = ({ type, text, onClick }) => {
     return (
-        <button className={`button${type ? ` button-${type}` : ''}`} type="submit" onClick={e => e}>
+        <button className={`button${type ? ` button-${type}` : ''}`} type="submit" onClick={onClick}>
             {text}
         </button>
     );

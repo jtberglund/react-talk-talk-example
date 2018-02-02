@@ -1,3 +1,15 @@
 # react-tech-talk-example
 
-Example project used in my tech talk
+Example React project using TypeScript, SASS, and Redux.
+
+## Setup
+
+```
+npm run setup
+```
+
+## Development
+
+```
+npm start
+```
