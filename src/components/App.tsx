@@ -2,31 +2,41 @@ import '../styles/App.scss';
 
 import * as React from 'react';
 
+import { AppState } from '../reducer';
 import Header from './Header';
+import LoadingModal from './LoadingModal';
 import Login from './Login';
+import { connect } from 'react-redux';
 
-interface Props {
-    //
+interface Props {}
+interface StoreProps {
+    isLoggedIn: boolean;
 }
 
-interface State {
-    //
-}
+type AllProps = Props & StoreProps;
 
-export default class App extends React.Component<Props, State> {
-    constructor(props: Props) {
+interface State {}
+
+class App extends React.Component<AllProps, State> {
+    constructor(props: AllProps) {
         super(props);
     }
 
     public render() {
+        const { isLoggedIn } = this.props;
+
         return (
             <div className="app">
                 <Header title="Momentary Memos" />
 
-                <div className="app__content container">
-                    <Login />
-                </div>
+                <div className="app__content container">{isLoggedIn ? <div /> : <Login />}</div>
+
+                <LoadingModal />
             </div>
         );
     }
 }
+
+const mapStateToProps = ({ user: { isLoggedIn } }: AppState) => ({ isLoggedIn });
+
+export default connect<StoreProps, {}, Props>(mapStateToProps)(App);

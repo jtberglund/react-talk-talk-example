@@ -3,7 +3,7 @@ const SET_IS_LOGGING_IN = 'SET_IS_LOGGING_IN';
 
 export const login = (firstName: string, lastName: string) => ({
     type: LOGIN,
-    payload: { firstName, lastName }
+    payload: { firstName, lastName, isLoggedIn: true }
 });
 
 export const setIsLoggingIn = (isLoggingIn: boolean) => ({
@@ -14,10 +14,12 @@ export const setIsLoggingIn = (isLoggingIn: boolean) => ({
 export interface UserState {
     firstName?: string;
     lastName?: string;
+    isLoggedIn: boolean;
     isLoggingIn: boolean;
 }
 
 const defaultState: UserState = {
+    isLoggedIn: false,
     isLoggingIn: false
 };
 

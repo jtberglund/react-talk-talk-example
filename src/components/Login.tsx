@@ -39,8 +39,17 @@ class Login extends React.Component<AllProps, State> {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    public componentWillReceiveProps(nextProps: AllProps) {
+        if (nextProps.firstName && nextProps.firstName !== this.state.firstName) {
+            this.setState({ firstName: nextProps.firstName });
+        }
+        if (nextProps.lastName && nextProps.lastName !== this.state.lastName) {
+            this.setState({ lastName: nextProps.lastName });
+        }
+    }
+
     public render() {
-        const { firstName, lastName } = this.props;
+        const { firstName, lastName } = this.state;
 
         return (
             <>
@@ -75,7 +84,7 @@ class Login extends React.Component<AllProps, State> {
         setTimeout(() => {
             this.props.login(firstName, lastName);
             this.props.setIsLoggingIn(false);
-        }, 2000);
+        }, 1000);
     }
 }
 
