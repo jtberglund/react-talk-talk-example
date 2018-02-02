@@ -6,12 +6,20 @@ const WebpackDevServer = require('webpack-dev-server');
 const webpack = require('webpack');
 
 // Production build
-gulp.task('prod', ['build']);
+gulp.task('prod', done => {
+    webpack(webpackConfig).run((err, stats) => {
+        if (err) {
+            gutil.log('Error', err);
+        } else {
+            Object.keys(stats.compilation.assets).forEach(key => gutil.log('Webpack: output ', gutil.colors.green(key)));
+        }
+
+        done();
+    });
+});
 
 // Dev server
-gulp.task('dev', ['webpack:dev-server']);
-
-gulp.task('webpack:dev-server', done => {
+gulp.task('dev', done => {
     webpackConfig.entry.app = [`webpack-dev-server/client?http://${Config.devAddress}:${Config.devPort}`, 'webpack/hot/dev-server'].concat(
         webpackConfig.entry.app
     );

@@ -7,7 +7,7 @@ const config = {
         app: ['./src/index.tsx']
     },
     output: {
-        path: path.resolve(__dirname, 'dev'),
+        path: path.resolve(__dirname, '../dist'),
         filename: 'bundle.js'
     },
     module: {

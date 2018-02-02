@@ -4,8 +4,7 @@
     "description": "Example project",
     "scripts": {
         "start": "gulp dev",
-        "build": "gulp prod",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "build": "gulp prod"
     },
     "author": "Jeremy Berglund",
     "license": "MIT",
