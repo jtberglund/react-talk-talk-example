@@ -1,7 +1,9 @@
+import '../styles/App.scss';
+
 import * as React from 'react';
+
 import Header from './Header';
 import Login from './Login';
-import '../styles/App.scss';
 
 interface Props {
     //
@@ -19,7 +21,7 @@ export default class App extends React.Component<Props, State> {
     public render() {
         return (
             <div className="app">
-                <Header user="test-user" />
+                <Header title="Momentary Memos" />
 
                 <div className="app__content container">
                     <Login />

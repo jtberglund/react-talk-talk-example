@@ -1,20 +1,37 @@
 import * as React from 'react';
-import TextInput from './TextInput';
+
+import { login, setIsLoggingIn } from '../redux/user';
+
+import { AppState } from '../reducer';
 import Button from './Button';
+import TextInput from './TextInput';
+import { connect } from 'react-redux';
 
 interface Props {}
+
+interface StoreProps {
+    firstName: string;
+    lastName: string;
+}
+
+interface DispatchProps {
+    login: (firstName: string, lastName: string) => void;
+    setIsLoggingIn: (isLoggingIn: boolean) => void;
+}
 
 interface State {
     firstName: string;
     lastName: string;
 }
 
-export default class Login extends React.Component<Props, State> {
-    constructor(props: Props) {
+type AllProps = Props & StoreProps & DispatchProps;
+
+class Login extends React.Component<AllProps, State> {
+    constructor(props: AllProps) {
         super(props);
         this.state = {
-            firstName: '',
-            lastName: ''
+            firstName: props.firstName || '',
+            lastName: props.lastName || ''
         };
 
         this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
@@ -23,7 +40,7 @@ export default class Login extends React.Component<Props, State> {
     }
 
     public render() {
-        const { firstName, lastName } = this.state;
+        const { firstName, lastName } = this.props;
 
         return (
             <>
@@ -50,7 +67,20 @@ export default class Login extends React.Component<Props, State> {
     }
 
     private handleSubmit(e) {
-        //
         e.preventDefault();
+
+        const { firstName, lastName } = this.state;
+        this.props.setIsLoggingIn(true);
+
+        setTimeout(() => {
+            this.props.login(firstName, lastName);
+            this.props.setIsLoggingIn(false);
+        }, 2000);
     }
 }
+
+const mapStateToProps = ({ user: { firstName, lastName } }: AppState) => ({ firstName, lastName });
+
+const mapDispatchToProps = { login, setIsLoggingIn };
+
+export default connect<StoreProps, DispatchProps, Props>(mapStateToProps, mapDispatchToProps)(Login);

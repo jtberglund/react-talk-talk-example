@@ -1,5 +1,6 @@
+import userReducer, { UserState } from './redux/user';
+
 import { combineReducers } from 'redux';
-import userReducer, { UserState } from './reducers/user';
 
 export interface AppState {
     user: UserState;
