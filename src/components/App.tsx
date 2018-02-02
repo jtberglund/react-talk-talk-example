@@ -6,6 +6,7 @@ import { AppState } from '../reducer';
 import Header from './Header';
 import LoadingModal from './LoadingModal';
 import Login from './Login';
+import MemoForm from './MemoForm';
 import { connect } from 'react-redux';
 
 interface Props {}
@@ -29,7 +30,7 @@ class App extends React.Component<AllProps, State> {
             <div className="app">
                 <Header title="Momentary Memos" />
 
-                <div className="app__content container">{isLoggedIn ? <div /> : <Login />}</div>
+                <div className="app__content container">{isLoggedIn ? <MemoForm /> : <Login />}</div>
 
                 <LoadingModal />
             </div>
